@@ -1,0 +1,35 @@
+<%- include("partials/header") %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <div class="notify_container">
+    <div class="notify_img">
+      <img style="height: 13rem; margin-left: 2rem" src="css/notify_logo.png" />
+    </div>
+    <div class="notify_text">
+      <h2>Covid Vaccine Alert !</h2>
+      <p style="word-wrap: break-word">
+        Get Notified about vaccine centres and their aviability at your location
+        through email.
+      </p>
+      <p>
+        Go and get your shot
+        <img style="height: 1.7rem" src="css/injection.png" />
+      </p>
+      <a href="/register" class="btn btn-success">Notify Me</a>
+    </div>
+  </div>
+
+  <div class="location">
+    <div class="sub-heading">Vaccination Centres in</div>
+    <div id="place-name">
+      <img class="location-logo" src="/css/location.gif" />
+    </div>
+  </div>
+
+  <div id="display-data"></div>
+
+  <script src="/js/index.js"></script>
+
+  <%- include("partials/footer") %>
+</body>

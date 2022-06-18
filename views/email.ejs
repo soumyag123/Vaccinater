@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaccine Tracker</title>
+    <style>
+      .e-container {
+        padding: 4px 22px;
+      }
+      .e-container .e-heading p {
+        margin-top: 2.7rem;
+        margin-bottom: 1.5rem;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      #all-centres {
+        background-color: #ebeef7;
+        padding: 1.2rem;
+        margin-top: 1rem;
+        margin-right: 2rem;
+        margin-left: 4rem;
+      }
+      .e-centre {
+        padding: 6px 5px;
+        margin-bottom: 16px;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+      .block{
+        color: rgb(128, 124, 124);
+        margin-top: 12px;
+        font-weight: bolder;
+        margin-left: 6px;
+      }
+      .vacc_type{
+        color : #7d198f;
+        font-weight: bolder;
+        margin-left: 3px;
+        margin-top: 1rem;
+      }
+    </style>
+    
+  </head>
+</html>
+ 
+ <body>
+     <div class="e-container">
+         <div class="e-heading">
+             <div style="font-size: 30px; font-weight: 700;">Hey ! <span> <%= username %> </span> </div>
+             <p class="text">Hii <%= username %> ! Hope you are Safe and Healthy. We have found the following Vaccination Centres near your location. Go and get your shot.
+            </p>
+         </div>
+         <div style="text-align: center;"><img class="e-img" src="cid:img" alt="Covid - 19"></div>
+         <div id="all-centres">
+
+             <% vdata.forEach(ele => { %>
+
+                 <% var address = (ele.name + "," + ele.block_name + "," + ele.district_name).toUpperCase() ; %> 
+                 <% var feetype = (ele.fee_type).toUpperCase() ; %>  
+                 
+                 <% var data = ele.sessions; %> 
+
+                 <div class="e-centre">
+                   <div class="e-address" style="color: rgb(97, 3, 97);"><%= address %> </div>
+                </div>
+
+                <% let i = 0; %>
+                 <% data.forEach(element => { %>
+                   
+                     <% if(element.vaccine == "COVISHIELD"){ %>
+
+                      <% if(i == 0){ %>
+                        <div class="vacc_type">COVISHIELD  <% " " %>  | <% " " %>  <span class="value"><%= feetype %> </span></div>
+                        <% i = i + 1; %> 
+                      <% } %>
+                      
+                        <div class="dose block">D1 : <%= element.available_capacity_dose1 %> <% " " %>  D2 : <%= element.available_capacity_dose2 %> <% " " %> | <% " " %> <%= element.date %> </div>
+                     
+                      
+                     <% } %> 
+                 <% }); %> 
+
+                 <% i = 0; %>
+                 <% data.forEach(element => { %>
+                   
+                     <% if(element.vaccine == "COVAXIN"){ %>
+
+                      <% if(i == 0){ %>
+                        <div class="vacc_type">COVAXIN <% " " %>  | <% " " %>   <span class="value"><%= feetype %> </span></div>
+                        <% i = i + 1; %> 
+                      <% } %>
+                      
+                        <div class="dose block">D1 : <%= element.available_capacity_dose1 %> <% " " %>  D2 : <%= element.available_capacity_dose2 %> <% " " %> | <% " " %> <%= element.date %> </div>
+                      
+                      
+                     <% } %> 
+                 <% }); %>  
+
+                 <% i = 0; %>
+                 <% data.forEach(element => { %>
+                   
+                     <% if(element.vaccine != "COVAXIN" && element.vaccine != "COVISHIELD"){ %>
+
+                      <% if(i == 0){ %>
+                        <div class="vacc_type"><%= element.vaccine %>  <% " " %>  | <% " " %>   <span class="value"><%= feetype %> </span></div>
+                        <% i = i + 1; %> 
+                      <% } %>
+                      
+                        <div class="dose block">D1 : <%= element.available_capacity_dose1 %> <% " " %>  D2 : <%= element.available_capacity_dose2 %> <% " " %> | <% " " %> <%= element.date %> </div>
+                      
+                      
+                     <% } %> 
+                 <% }); %>
+
+                 <% }); %>  
+         </div>
+     </div>
+ </body>
+</html>

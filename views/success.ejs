@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<style>
+  .success_container {
+    display: flex;
+    margin: 13px 33px;
+    background: #cdebe4;
+    padding: 36px 19px;
+  }
+  .img {
+    margin-left: 10%;
+  }
+  .success_text {
+    margin-top: 1.3rem;
+    margin-left: 2rem;
+  }
+  .register_failed{
+    display: flex;
+    margin: 13px 33px;
+    background: #ebdfdf;
+    padding: 36px 19px;
+  }
+  h2 {
+    font-family: inherit;
+  }
+  p {
+    font-weight: 500;
+  }
+</style>
+
+<body>
+  <%- include('partials/navbar') %>
+  <% if(message === "Successfully Registered"){ %> 
+  <div class="success_container">
+    <div class="img">
+      <img src="/css/notify_logo.png" alt="logo" style="height: 13rem" />
+    </div> 
+    <div class="success_text">
+      <h2><%= message %> <span style="color: green;">&#10003</span></h2>
+      <p>We will notify you soon. Thank you for using Vaccinator.</p>
+      <p>Stay safe and stay healthy &#128522</p>
+    </div>
+  </div>
+  <% } %>
+  <% if(message !== "Successfully Registered"){ %>
+    <div class="register_failed">
+        <div class="img">
+          <img src="/css/notify_logo.png" alt="logo" style="height: 13rem" />
+        </div> 
+        <div class="success_text">
+          <h2><%= message %> &#10060</h2>
+          <p>Thank you for using Vaccinator.</p>
+          <p>Stay safe and stay healthy &#128522</p>
+        </div>
+      </div>
+    <% } %>   
+</body>

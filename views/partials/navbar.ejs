@@ -1,0 +1,23 @@
+<div class="navbar" id="navbar">
+  <div class="heading">
+    <a href="/"> <img src="/css/logo.png" alt="#" />VACCINATOR</a>
+  </div>
+  <div class="links">
+    <a href="/">HOME</a>
+    <a href="/register" class="register_btn">REGISTER</a>
+  </div>
+  <a href="#" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<script>
+  function myFunction() {
+    var x = document.getElementById("navbar");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+      document.getElementsByClassName("links").className += "responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }
+</script>
