@@ -1,6 +1,6 @@
 <div align="center">
   <h1 align="center">VACCINATER</h1>
-  <h1 align="center">Go! Get your shot now</h1>
+  <h1 align="center">Go! Get your shot now<img align="center" src="./Images/logo.png" alt="Logo" width="40" height="40"></h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
