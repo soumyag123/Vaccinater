@@ -77,12 +77,18 @@ Your app is now running on http://localhost:8000
 
 ## Home Page
    - Home Page of the website. Get information about all the available vaccine centers at user location. No. of doses available, type of vaccine, age limit and other information.
+   <img src="Images/homepage.png" alt="home page" width="800"/> 
+   <img src="Images/centres.png" alt="home page" width="800"/> 
 
 ## Register Page
    - Users can get themselves registered to get updates about the vaccine via email.
+   <img src="Images/register.png" alt="register page" width="800"/> 
+   <img src="Images/register_success.png" alt="register page" width="800"/> 
 
 ## Sending Email
    - Email sent via Nodemailer to all the registered users about vaccine centers and their availability for next few days.
+   <img src="Images/email1.png" alt="email page" width="800"/> 
+   <img src="Images/email2.png" alt="email page" width="800"/> 
    
 
 ## Need Help?
