@@ -50,7 +50,7 @@ Laptops, Desktops and Tablet PCs
 
 ## Getting Started
 ```sh
-  git clone https://github.com/soumyag123/Face-Recognition-Attendance-System.git
+  git clone https://github.com/soumyag123/Vaccinater.git
 ```
 ```sh
   cd Vaccinater
